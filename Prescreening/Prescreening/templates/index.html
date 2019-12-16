@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<script type="text/javascript">
+    function send_click() {
+        var data = $("#txt_data").val();
+        $("#messages").append("<div class='botui-message'><div><div class='human botui-message-content text'><span>" + data + "</span></div></div></div>");
+        $("#txt_data").val("");
+        $.ajax({
+            type: 'POST',
+            url: "/sendMessage",
+            data: { payload: data },
+            dataType: "text",
+            success: function (data) {
+                $("#messages").append("<div class='botui-message'><div><div class='botui-message-content text'><span>" + data + "</span></div></div></div>");
+            }
+        });
+    };
+
+    $(document).ready(function () {
+        send_click();
+    });
+
+</script>
+<form>
+    <div class="botui-app-container" id="prescreening">
+        <center>
+            <h2>Mix.Hackz - Patient Prescreening</h2>
+        </center>
+        <div class="botui12 botui-container">
+            <div class="botui-messages-container">
+                <div id="messages">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: right;">
+        <div>
+            <input type="text" id="txt_data">
+            <input type="button" onclick="send_click()" id="send" name="Send" value="Send" />
+        </div>
+    </div>
+</form>
+
+{% endblock %}

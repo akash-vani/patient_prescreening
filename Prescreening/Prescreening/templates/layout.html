@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - My Flask Application</title>
+    <!--<link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/content/site.css" />-->
+    <link rel="stylesheet" href="/static/content/botui.min.css" />
+    <link rel="stylesheet" href="/static/content/botui-theme-default.css" />
+    <!--<script src="/static/scripts/modernizr-2.6.2.js"></script>-->
+    <script type="text/javascript" src="https://speechanywhere-staging.nuancehce.com/preview/DNB-24467/scripts/Nuance.SpeechAnywhere.js"></script>
+    <script language="javascript" type="text/javascript">
+
+        cmdIdSend = "send"
+
+        function sendClicked() {
+            send_click();
+        }
+
+        ////////////////////////////////////////////////////////////////////
+        function NUSA_configure() {
+            NUSA_userId = "aUser";
+            NUSA_applicationName = "Patient_PreScreening";
+
+            // local server
+            licenseGuid = "c79c8615-c487-480f-9468-e66599b7b63d";
+            partnerGuid = "f4aec8f2-c1bf-486a-ae6d-6c67d1c0af38";
+
+            NUSAI_setCookie("NUSA_Guids", licenseGuid + "/" + partnerGuid);
+
+            NUSA_language = "en";
+
+            var cmdGroupId = NUSA_createCommandSet("MyGroup", "my first group");
+            NUSA_createCommand(cmdGroupId, "cmdId1", "new patient", "New Patient", "add a new patient");
+
+            NUSA_createCommandPlaceholder("colorValue", "a color value");
+            var values = [];
+            var spokenForms = [];
+
+            var cmdSetColoring = NUSA_createCommandSet("Coloring Commands", "a set of coloring commands");
+            NUSA_createCommand(cmdSetColoring,                      // the commandSet identifier
+                cmdIdSend,                          // the id of this command
+                "send",        // the spoken form - what do say to trigger this command
+                "enter");
+
+        }
+
+        function NUSA_onCommandRecognized(cmdId, spokenText, content, placeholderIds, placeholderValues) {
+
+            sendClicked();
+        }
+                ////////////////////////////////////////////////////////////////////
+    </script>
+</head>
+
+<body>
+
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="/static/scripts/jquery-1.10.2.js"></script>
+    <script src="/static/scripts/bootstrap.js"></script>
+    <script src="/static/scripts/respond.js"></script>
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>

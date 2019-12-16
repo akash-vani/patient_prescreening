@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project xmlns:nuance="https://developer.nuance.com/mix/nlu/trsx" xml:lang="eng-USA" nuance:version="2.4">
+    <metadata>
+        <entry key="created_by">Amar Khubani</entry>
+        <entry key="created_by">amar.khubani@nuance.com</entry>
+        <entry key="created_at">2019-12-13 03:57:04+00:00</entry>
+    </metadata>
+    <sources>
+        <source name="nuance_custom_data" displayName="nuance_custom_data" version="1.0" type="CUSTOM" useForOOV="true"/>
+    </sources>
+    <ontology base="http://localhost:8080/resources/ontology-1.0.xml">
+        <intents>
+            <intent name="ABDOMEN_ACHE">
+                <links>
+                    <link conceptref="PP_ABDOMEN_AREA"/>
+                    <link conceptref="PP_DISEASE_TYPE"/>
+                    <link conceptref="PP_FREQUENCY"/>
+                    <link conceptref="PP_SEVERITY"/>
+                </links>
+            </intent>
+            <intent name="SCHEDULE_APPOINTMENT">
+                <links>
+                    <link conceptref="PP_APPOINTMENT_DATE"/>
+                    <link conceptref="YES_NO"/>
+                </links>
+            </intent>
+            <intent name="identify_problem">
+                <links>
+                    <link conceptref="PP_SYMPTOM_START_TIME"/>
+                </links>
+            </intent>
+            <intent name="END_INTENT"/>
+            <intent name="FEVER">
+                <links>
+                    <link conceptref="PP_DISEASE_TYPE"/>
+                    <link conceptref="PP_TEMPERATURE"/>
+                    <link conceptref="ZIP_CODE"/>
+                </links>
+            </intent>
+        </intents>
+        <concepts>
+            <concept name="PP_DISEASE_TYPE"/>
+            <concept name="PP_APPOINTMENT_DATE"/>
+            <concept name="NATURAL_NUMBER">
+                <relations>
+                    <relation type="isA" conceptref="nuance_CARDINAL_NUMBER"/>
+                </relations>
+            </concept>
+            <concept name="PP_APPOINTMENT_TIME"/>
+            <concept name="PP_TEMPERATURE"/>
+            <concept name="PP_FEVER_SYMPTOMS"/>
+            <concept name="PP_ABDOMEN_HISTORY_CHECK"/>
+            <concept name="CREDIT_CARD">
+                <relations>
+                    <relation type="isA" conceptref="nuance_CARDINAL_NUMBER"/>
+                </relations>
+            </concept>
+            <concept name="CC_EXP_DATE">
+                <relations>
+                    <relation type="isA" conceptref="nuance_EXPIRY_DATE"/>
+                </relations>
+            </concept>
+            <concept name="PP_ABDOMEN_INJURY_CHECK"/>
+            <concept name="PP_CHECK_TEMPERATURE"/>
+            <concept name="PP_FREQUENCY"/>
+            <concept name="PP_ABDOMEN_AREA"/>
+            <concept name="PP_BOOKING_CONFIRMATION"/>
+            <concept name="DATE">
+                <relations>
+                    <relation type="isA" conceptref="nuance_CALENDARX"/>
+                </relations>
+            </concept>
+            <concept name="ZIP_CODE">
+                <relations>
+                    <relation type="isA" conceptref="nuance_CARDINAL_NUMBER"/>
+                </relations>
+            </concept>
+            <concept name="Yes">
+                <relations>
+                    <relation type="isA" conceptref="YES_NO"/>
+                </relations>
+            </concept>
+            <concept name="PHONE">
+                <relations>
+                    <relation type="isA" conceptref="nuance_CARDINAL_NUMBER"/>
+                </relations>
+            </concept>
+            <concept name="DIGITS">
+                <relations>
+                    <relation type="isA" conceptref="nuance_CARDINAL_NUMBER"/>
+                </relations>
+            </concept>
+            <concept name="PP_SEVERITY"/>
+            <concept name="PP_FEVER_HISTORY"/>
+            <concept name="CURRENCY">
+                <relations>
+                    <relation type="isA" conceptref="nuance_AMOUNT"/>
+                </relations>
+            </concept>
+            <concept name="No">
+                <relations>
+                    <relation type="isA" conceptref="YES_NO"/>
+                </relations>
+            </concept>
+            <concept name="PP_DISEASE_PEROID"/>
+            <concept name="TIME">
+                <relations>
+                    <relation type="isA" conceptref="nuance_CALENDARX"/>
+                </relations>
+            </concept>
+            <concept name="YES_NO">
+                <relations>
+                    <relation type="isA" conceptref="nuance_BOOLEAN"/>
+                </relations>
+            </concept>
+            <concept name="PP_SYMPTOM_START_TIME"/>
+            <concept name="SSN">
+                <relations>
+                    <relation type="isA" conceptref="nuance_CARDINAL_NUMBER"/>
+                </relations>
+            </concept>
+        </concepts>
+    </ontology>
+    <dictionaries>
+        <dictionary conceptref="PP_APPOINTMENT_DATE">
+            <entry literal="Day after tomorrow" value="Day after tomorrow"/>
+            <entry literal="Friday" value="Friday"/>
+            <entry literal="Monday" value="Monday"/>
+            <entry literal="Saturday" value="Saturday"/>
+            <entry literal="Sunday" value="Sunday"/>
+            <entry literal="Thursday" value="Thursday"/>
+            <entry literal="Tuesday" value="Tuesday"/>
+            <entry literal="Wednesday" value="Wednesday"/>
+            <entry literal="today" value="today"/>
+            <entry literal="tomorrow" value="tomorrow"/>
+        </dictionary>
+        <dictionary conceptref="PP_APPOINTMENT_TIME">
+            <entry literal="01:00" value="01:00"/>
+            <entry literal="02:00" value="02:00"/>
+            <entry literal="03:00" value="03:00"/>
+            <entry literal="04:00" value="04:00"/>
+            <entry literal="05:00" value="05:00"/>
+            <entry literal="06:00" value="06:00"/>
+            <entry literal="07:00" value="07:00"/>
+            <entry literal="08:00" value="08:00"/>
+            <entry literal="09:00" value="09:00"/>
+            <entry literal="1 PM" value="1 PM"/>
+            <entry literal="10 AM" value="10 AM"/>
+            <entry literal="10:00" value="10:00"/>
+            <entry literal="11 AM" value="11 AM"/>
+            <entry literal="11:00" value="11:00"/>
+            <entry literal="12 o'clock" value="12 o'clock"/>
+            <entry literal="12:00" value="12:00"/>
+            <entry literal="2 PM" value="2 PM"/>
+            <entry literal="3 PM" value="3 PM"/>
+            <entry literal="4 PM" value="4 PM"/>
+            <entry literal="5 PM" value="5 PM"/>
+            <entry literal="6 PM" value="6 PM"/>
+            <entry literal="7 PM" value="7 PM"/>
+            <entry literal="9 AM" value="9 AM"/>
+            <entry literal="Afternoon" value="Afternoon"/>
+            <entry literal="Evening" value="Evening"/>
+            <entry literal="Morning" value="Morning"/>
+        </dictionary>
+        <dictionary conceptref="PP_TEMPERATURE">
+            <entry literal="100" value="100"/>
+            <entry literal="100.5" value="100.5"/>
+            <entry literal="101" value="101"/>
+            <entry literal="101.5" value="101.5"/>
+            <entry literal="102" value="102"/>
+            <entry literal="102.5" value="102.5"/>
+            <entry literal="103" value="103"/>
+            <entry literal="103.5" value="103.5"/>
+            <entry literal="104" value="104"/>
+            <entry literal="104.5" value="104.5"/>
+            <entry literal="105.5" value="105.5"/>
+            <entry literal="98" value="98"/>
+            <entry literal="98.5" value="98.5"/>
+            <entry literal="99" value="99"/>
+            <entry literal="99.5" value="99.5"/>
+        </dictionary>
+        <dictionary conceptref="PP_FEVER_SYMPTOMS">
+            <entry literal="N" value="No"/>
+            <entry literal="No" value="No"/>
+            <entry literal="Y" value="Yes"/>
+            <entry literal="Yes" value="Yes"/>
+        </dictionary>
+        <dictionary conceptref="PP_ABDOMEN_HISTORY_CHECK">
+            <entry literal="Appendicitis" value="Appendicitis"/>
+            <entry literal="Cancer" value="Cancer"/>
+            <entry literal="Crohn's" value="Crohn's"/>
+            <entry literal="Gallstones" value="Gallstones"/>
+            <entry literal="Gastroenteritis" value="Gastroenteritis"/>
+            <entry literal="Heart attack" value="Heart attack"/>
+            <entry literal="Hepatitis" value="Hepatitis"/>
+            <entry literal="Kidney Infection" value="Kidney Infection"/>
+            <entry literal="N" value="No"/>
+            <entry literal="No" value="No"/>
+            <entry literal="Ovarian cysts" value="Ovarian cysts"/>
+            <entry literal="Pneumonia" value="Pneumonia"/>
+            <entry literal="Uremia" value="Uremia"/>
+            <entry literal="Y" value="Yes"/>
+            <entry literal="Yes" value="Yes"/>
+        </dictionary>
+        <dictionary conceptref="PP_ABDOMEN_INJURY_CHECK">
+            <entry literal="N" value="No"/>
+            <entry literal="No" value="No"/>
+            <entry literal="Y" value="Yes"/>
+            <entry literal="Yes" value="Yes"/>
+        </dictionary>
+        <dictionary conceptref="PP_CHECK_TEMPERATURE">
+            <entry literal="N" value="No"/>
+            <entry literal="No" value="No"/>
+            <entry literal="Y" value="Yes"/>
+            <entry literal="Yes" value="Yes"/>
+        </dictionary>
+        <dictionary conceptref="PP_ABDOMEN_AREA">
+            <entry literal="Center" value="Center"/>
+            <entry literal="Lower" value="Lower"/>
+            <entry literal="Upper" value="Upper"/>
+        </dictionary>
+        <dictionary conceptref="PP_BOOKING_CONFIRMATION">
+            <entry literal="N" value="No"/>
+            <entry literal="No" value="No"/>
+            <entry literal="Y" value="Yes"/>
+            <entry literal="Yes" value="Yes"/>
+        </dictionary>
+        <dictionary conceptref="PP_SEVERITY">
+            <entry literal="one" value="one"/>
+        </dictionary>
+        <dictionary conceptref="PP_FEVER_HISTORY">
+            <entry literal="N" value="No"/>
+            <entry literal="No" value="No"/>
+            <entry literal="Y" value="Yes"/>
+            <entry literal="Yes" value="Yes"/>
+        </dictionary>
+        <dictionary conceptref="PP_DISEASE_PEROID">
+            <entry literal="1" value="1"/>
+            <entry literal="2" value="2"/>
+            <entry literal="3" value="3"/>
+            <entry literal="4" value="4"/>
+            <entry literal="5" value="5"/>
+            <entry literal="6" value="6"/>
+            <entry literal="7" value="7"/>
+            <entry literal="Day Before Yesterday" value="2"/>
+            <entry literal="Week" value="7"/>
+            <entry literal="Yesterday" value="1"/>
+        </dictionary>
+    </dictionaries>
+    <samples>
+        <sample intentref="SCHEDULE_APPOINTMENT" count="1">
+            <annotation conceptref="YES_NO">
+                <annotation conceptref="nuance_BOOLEAN">Yes</annotation>
+            </annotation>
+        </sample>
+        <sample intentref="FEVER" count="1">
+            <annotation conceptref="PP_DISEASE_TYPE">fever</annotation>
+        </sample>
+        <sample intentref="SCHEDULE_APPOINTMENT" count="1">Book an appointment</sample>
+        <sample intentref="identify_problem" count="1">I don't feel well .</sample>
+        <sample intentref="identify_problem" count="1">I don't feel well<annotation conceptref="PP_SYMPTOM_START_TIME">today</annotation>.</sample>
+        <sample intentref="identify_problem" count="1">I am feeling sick .</sample>
+        <sample intentref="identify_problem" count="1">I am unwell .</sample>
+        <sample intentref="identify_problem" count="1">I am unwell<annotation conceptref="PP_SYMPTOM_START_TIME">today</annotation>.</sample>
+        <sample intentref="identify_problem" count="1">I have been feeling very ill since I ate lunch .</sample>
+        <sample intentref="identify_problem" count="1">I have been feeling very ill since I ate lunch<annotation conceptref="PP_SYMPTOM_START_TIME">yesterday</annotation>.</sample>
+        <sample intentref="identify_problem" count="1">I have been feeling very ill since I ate lunch<annotation conceptref="PP_SYMPTOM_START_TIME">today</annotation>.</sample>
+        <sample intentref="identify_problem" count="1">I have been feeling very ill since I ate lunch<annotation conceptref="PP_SYMPTOM_START_TIME">day before yesterday</annotation>.</sample>
+        <sample intentref="identify_problem" count="1">I am unwell since<annotation conceptref="PP_SYMPTOM_START_TIME">yesterday</annotation>.</sample>
+        <sample intentref="identify_problem" count="1">I am feeling sick<annotation conceptref="PP_SYMPTOM_START_TIME">today</annotation>.</sample>
+        <sample intentref="identify_problem" count="1">I am feeling sick since<annotation conceptref="PP_SYMPTOM_START_TIME">yesterday</annotation>.</sample>
+        <sample intentref="identify_problem" count="1">I am feeling sick since<annotation conceptref="PP_SYMPTOM_START_TIME">day before yesterday</annotation>.</sample>
+        <sample intentref="identify_problem" count="1">I don't feel well since<annotation conceptref="PP_SYMPTOM_START_TIME">yesterday</annotation>.</sample>
+        <sample intentref="identify_problem" count="1">I don't feel well since<annotation conceptref="PP_SYMPTOM_START_TIME">day before yesterday</annotation>.</sample>
+        <sample count="1" excluded="true">I am not feeling well .</sample>
+        <sample intentref="ABDOMEN_ACHE" count="1">I am having<annotation conceptref="PP_SEVERITY">severe</annotation>
+            <annotation conceptref="PP_DISEASE_TYPE">stomach pain</annotation>.</sample>
+        <sample intentref="ABDOMEN_ACHE" count="1">My stomach pains<annotation conceptref="PP_FREQUENCY">intermittently</annotation>.</sample>
+        <sample intentref="ABDOMEN_ACHE" count="1">My<annotation conceptref="PP_ABDOMEN_AREA">lower left</annotation>
+            <annotation conceptref="PP_DISEASE_TYPE">stomach pains</annotation>.</sample>
+        <sample intentref="ABDOMEN_ACHE" count="1">My<annotation conceptref="PP_DISEASE_TYPE">stomach pains</annotation>
+            <annotation conceptref="PP_SEVERITY">heavily</annotation>in the<annotation conceptref="PP_ABDOMEN_AREA">center</annotation>
+            <annotation conceptref="PP_FREQUENCY">every morning</annotation>.</sample>
+        <sample intentref="SCHEDULE_APPOINTMENT" count="1">I want to schedule an appointment with the doctor .</sample>
+        <sample intentref="SCHEDULE_APPOINTMENT" count="1">I want to book an appointment with the doctor<annotation conceptref="PP_APPOINTMENT_DATE">today</annotation>.</sample>
+        <sample intentref="SCHEDULE_APPOINTMENT" count="1">I want to book an appointment with the doctor .</sample>
+        <sample intentref="SCHEDULE_APPOINTMENT" count="1">Please book an appointment on<annotation conceptref="PP_APPOINTMENT_DATE">21 st</annotation>.</sample>
+        <sample intentref="SCHEDULE_APPOINTMENT" count="1">I need to make an appointment .</sample>
+        <sample intentref="SCHEDULE_APPOINTMENT" count="1">I need to see the doctor .</sample>
+        <sample intentref="SCHEDULE_APPOINTMENT" count="1">Do you think the doctor could squeeze us in<annotation conceptref="PP_APPOINTMENT_DATE">today</annotation>?</sample>
+        <sample intentref="SCHEDULE_APPOINTMENT" count="1">I'd like to schedule an appointment for<annotation conceptref="PP_APPOINTMENT_DATE">tomorrow</annotation>.</sample>
+        <sample intentref="SCHEDULE_APPOINTMENT" count="1">I prefer evening appointment . Do you have anything open ?</sample>
+        <sample intentref="FEVER" count="1">I am having<annotation conceptref="PP_DISEASE_TYPE">fever</annotation>.</sample>
+        <sample intentref="FEVER" count="1">My<annotation conceptref="PP_DISEASE_TYPE">temperature</annotation>is<annotation conceptref="PP_TEMPERATURE">high</annotation>.</sample>
+        <sample intentref="FEVER" count="1">I am down with<annotation conceptref="PP_DISEASE_TYPE">fever</annotation>.</sample>
+        <sample intentref="FEVER" count="1">I am down with<annotation conceptref="PP_DISEASE_TYPE">fever</annotation>.</sample>
+        <sample intentref="ABDOMEN_ACHE" count="1">
+            <annotation conceptref="PP_DISEASE_TYPE">abdominal pain</annotation>
+        </sample>
+        <sample intentref="FEVER" count="1">My<annotation conceptref="PP_DISEASE_TYPE">temperature</annotation>is<annotation conceptref="PP_TEMPERATURE">high</annotation>.</sample>
+        <sample intentref="FEVER" count="1">I am having<annotation conceptref="PP_DISEASE_TYPE">fever</annotation>.</sample>
+        <sample intentref="SCHEDULE_APPOINTMENT" count="1">I prefer evening appointment . Do you have anything open ?</sample>
+        <sample intentref="SCHEDULE_APPOINTMENT" count="1">I'd like to schedule an appointment for<annotation conceptref="PP_APPOINTMENT_DATE">tomorrow</annotation>.</sample>
+        <sample intentref="SCHEDULE_APPOINTMENT" count="1">Do you think the doctor could squeeze us in<annotation conceptref="PP_APPOINTMENT_DATE">today</annotation>?</sample>
+        <sample intentref="SCHEDULE_APPOINTMENT" count="1">I need to see the doctor .</sample>
+        <sample intentref="SCHEDULE_APPOINTMENT" count="1">I need to make an appointment .</sample>
+        <sample intentref="SCHEDULE_APPOINTMENT" count="1">Please book an appointment on<annotation conceptref="PP_APPOINTMENT_DATE">21 st</annotation>.</sample>
+        <sample intentref="SCHEDULE_APPOINTMENT" count="1">I want to book an appointment with the doctor .</sample>
+        <sample intentref="SCHEDULE_APPOINTMENT" count="1">I want to book an appointment with the doctor<annotation conceptref="PP_APPOINTMENT_DATE">today</annotation>.</sample>
+        <sample intentref="SCHEDULE_APPOINTMENT" count="1">I want to schedule an appointment with the doctor .</sample>
+        <sample intentref="ABDOMEN_ACHE" count="1">My<annotation conceptref="PP_DISEASE_TYPE">stomach pains</annotation>
+            <annotation conceptref="PP_SEVERITY">heavily</annotation>in the<annotation conceptref="PP_ABDOMEN_AREA">center</annotation>
+            <annotation conceptref="PP_FREQUENCY">every morning</annotation>.</sample>
+        <sample intentref="ABDOMEN_ACHE" count="1">My<annotation conceptref="PP_ABDOMEN_AREA">lower left</annotation>
+            <annotation conceptref="PP_DISEASE_TYPE">stomach pains</annotation>.</sample>
+        <sample intentref="ABDOMEN_ACHE" count="1">My stomach pains<annotation conceptref="PP_FREQUENCY">intermittently</annotation>.</sample>
+        <sample intentref="ABDOMEN_ACHE" count="1">I am having<annotation conceptref="PP_FREQUENCY">continuous</annotation>
+            <annotation conceptref="PP_DISEASE_TYPE">pain in my stomach</annotation>
+        </sample>
+        <sample intentref="ABDOMEN_ACHE" count="1">I am having<annotation conceptref="PP_SEVERITY">severe</annotation>
+            <annotation conceptref="PP_DISEASE_TYPE">stomach pain</annotation>.</sample>
+        <sample count="1" excluded="true">I am not feeling well .</sample>
+        <sample intentref="identify_problem" count="1">I don't feel well since<annotation conceptref="PP_SYMPTOM_START_TIME">day before yesterday</annotation>.</sample>
+        <sample intentref="identify_problem" count="1">I don't feel well since<annotation conceptref="PP_SYMPTOM_START_TIME">yesterday</annotation>.</sample>
+        <sample intentref="identify_problem" count="1">I am feeling sick since<annotation conceptref="PP_SYMPTOM_START_TIME">day before yesterday</annotation>.</sample>
+        <sample intentref="identify_problem" count="1">I am feeling sick since<annotation conceptref="PP_SYMPTOM_START_TIME">yesterday</annotation>.</sample>
+        <sample intentref="identify_problem" count="1">I am feeling sick<annotation conceptref="PP_SYMPTOM_START_TIME">today</annotation>.</sample>
+        <sample intentref="identify_problem" count="1">I am unwell since<annotation conceptref="PP_SYMPTOM_START_TIME">yesterday</annotation>.</sample>
+        <sample intentref="identify_problem" count="1">I have been feeling very ill since I ate lunch<annotation conceptref="PP_SYMPTOM_START_TIME">day before yesterday</annotation>.</sample>
+        <sample intentref="identify_problem" count="1">I have been feeling very ill since I ate lunch<annotation conceptref="PP_SYMPTOM_START_TIME">today</annotation>.</sample>
+        <sample intentref="identify_problem" count="1">I have been feeling very ill since I ate lunch<annotation conceptref="PP_SYMPTOM_START_TIME">yesterday</annotation>.</sample>
+        <sample intentref="identify_problem" count="1">I have been feeling very ill since I ate lunch .</sample>
+        <sample intentref="identify_problem" count="1">ill</sample>
+        <sample intentref="identify_problem" count="1">sick</sample>
+        <sample intentref="identify_problem" count="1">I am unwell<annotation conceptref="PP_SYMPTOM_START_TIME">today</annotation>.</sample>
+        <sample intentref="identify_problem" count="1">I am unwell .</sample>
+        <sample intentref="identify_problem" count="1">I am feeling sick .</sample>
+        <sample intentref="identify_problem" count="1">I don't feel well<annotation conceptref="PP_SYMPTOM_START_TIME">today</annotation>.</sample>
+        <sample intentref="identify_problem" count="1">I don't feel well .</sample>
+        <sample intentref="identify_problem" count="1">Unwell</sample>
+        <sample intentref="identify_problem" count="1">feeling sick</sample>
+        <sample intentref="identify_problem" count="1">I am not feeling well</sample>
+        <sample intentref="END_INTENT" count="1">No</sample>
+        <sample intentref="END_INTENT" count="1">Naah</sample>
+        <sample intentref="END_INTENT" count="1">No , I don ; t want to book an appointment</sample>
+        <sample intentref="END_INTENT" count="1">Nevermind</sample>
+    </samples>
+</project>

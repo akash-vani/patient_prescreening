@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>060c4570-20c8-4589-bef4-bafe103d83c2</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>runserver.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+    <Name>Prescreening</Name>
+    <RootNamespace>Prescreening</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Prescreening\dlg_client.py" />
+    <Compile Include="Prescreening\google\api\annotations_pb2.py" />
+    <Compile Include="Prescreening\google\api\http_pb2.py" />
+    <Compile Include="Prescreening\nuance\dialog\v1beta1\runtime_interface_messages_pb2.py" />
+    <Compile Include="Prescreening\nuance\dialog\v1beta1\service_interface_messages_pb2.py" />
+    <Compile Include="Prescreening\nuance\dialog\v1beta1\service_interface_pb2.py" />
+    <Compile Include="Prescreening\nuance\dialog\v1beta1\service_interface_pb2_grpc.py" />
+    <Compile Include="runserver.py" />
+    <Compile Include="Prescreening\__init__.py" />
+    <Compile Include="Prescreening\views.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Prescreening\" />
+    <Folder Include="Prescreening\google\" />
+    <Folder Include="Prescreening\google\api\" />
+    <Folder Include="Prescreening\google\api\__pycache__\" />
+    <Folder Include="Prescreening\nuance\" />
+    <Folder Include="Prescreening\nuance\dialog\" />
+    <Folder Include="Prescreening\nuance\dialog\v1beta1\" />
+    <Folder Include="Prescreening\nuance\dialog\v1beta1\__pycache__\" />
+    <Folder Include="Prescreening\static\" />
+    <Folder Include="Prescreening\static\content\" />
+    <Folder Include="Prescreening\static\fonts\" />
+    <Folder Include="Prescreening\static\scripts\" />
+    <Folder Include="Prescreening\templates\" />
+    <Folder Include="Prescreening\templates\Resources\" />
+    <Folder Include="Prescreening\templates\Resources\css\" />
+    <Folder Include="Prescreening\templates\Resources\js\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Prescreening\google\api\annotations.proto" />
+    <Content Include="Prescreening\google\api\http.proto" />
+    <Content Include="Prescreening\google\api\__pycache__\annotations_pb2.cpython-37.pyc" />
+    <Content Include="Prescreening\google\api\__pycache__\http_pb2.cpython-37.pyc" />
+    <Content Include="Prescreening\nuance\dialog\v1beta1\runtime-interface-messages.proto" />
+    <Content Include="Prescreening\nuance\dialog\v1beta1\service-interface-messages.proto" />
+    <Content Include="Prescreening\nuance\dialog\v1beta1\service-interface.proto" />
+    <Content Include="Prescreening\nuance\dialog\v1beta1\__pycache__\runtime_interface_messages_pb2.cpython-37.pyc" />
+    <Content Include="Prescreening\nuance\dialog\v1beta1\__pycache__\service_interface_messages_pb2.cpython-37.pyc" />
+    <Content Include="Prescreening\nuance\dialog\v1beta1\__pycache__\service_interface_pb2.cpython-37.pyc" />
+    <Content Include="Prescreening\nuance\dialog\v1beta1\__pycache__\service_interface_pb2_grpc.cpython-37.pyc" />
+    <Content Include="Prescreening\static\content\botui-theme-default.css" />
+    <Content Include="Prescreening\static\content\botui.min.css" />
+    <Content Include="Prescreening\static\scripts\botui.js" />
+    <Content Include="Prescreening\static\scripts\prescreening.js" />
+    <Content Include="Prescreening\static\scripts\vue.min.js" />
+    <Content Include="Prescreening\templates\PrescreeningBot.html" />
+    <Content Include="Prescreening\templates\Resources\css\botui-theme-default.css" />
+    <Content Include="Prescreening\templates\Resources\css\botui.min.css" />
+    <Content Include="Prescreening\templates\Resources\js\botui.js" />
+    <Content Include="Prescreening\templates\Resources\js\prescreening.js" />
+    <Content Include="Prescreening\templates\Resources\js\vue.min.js" />
+    <Content Include="requirements.txt" />
+    <Content Include="Prescreening\static\content\bootstrap.css" />
+    <Content Include="Prescreening\static\content\bootstrap.min.css" />
+    <Content Include="Prescreening\static\content\site.css" />
+    <Content Include="Prescreening\static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Prescreening\static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Prescreening\static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Prescreening\static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Prescreening\static\scripts\bootstrap.js" />
+    <Content Include="Prescreening\static\scripts\bootstrap.min.js" />
+    <Content Include="Prescreening\static\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Prescreening\static\scripts\jquery-1.10.2.js" />
+    <Content Include="Prescreening\static\scripts\jquery-1.10.2.min.js" />
+    <Content Include="Prescreening\static\scripts\jquery-1.10.2.min.map" />
+    <Content Include="Prescreening\static\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Prescreening\static\scripts\jquery.validate.js" />
+    <Content Include="Prescreening\static\scripts\jquery.validate.min.js" />
+    <Content Include="Prescreening\static\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Prescreening\static\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Prescreening\static\scripts\modernizr-2.6.2.js" />
+    <Content Include="Prescreening\static\scripts\respond.js" />
+    <Content Include="Prescreening\static\scripts\respond.min.js" />
+    <Content Include="Prescreening\static\scripts\_references.js" />
+    <Content Include="Prescreening\templates\about.html" />
+    <Content Include="Prescreening\templates\contact.html" />
+    <Content Include="Prescreening\templates\index.html" />
+    <Content Include="Prescreening\templates\layout.html" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
